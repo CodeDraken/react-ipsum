@@ -11,35 +11,52 @@ const units = [
 
 const propTypes = {
   children: PropTypes.node,
+  className: PropTypes.string,
+  subClass: PropTypes.string,
   len: PropTypes.number,
   count: PropTypes.number,
-  unit: PropTypes.oneOf(units)
+  unit: PropTypes.oneOf(units),
+  renderAs: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.node
+  ]),
+  subEl: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.string,
+    PropTypes.node
+  ])
 }
 
 const defaultProps = {
   children: null,
   len: null,
   count: 2,
-  unit: 'sentences'
+  unit: 'sentences',
+  renderAs: React.Fragment
 }
 
 export const LoremText = ({ children, ...props }) => {
-  const { len, count, unit, ...attributes } = props
+  const { len, count, unit, className, subClass, subEl: SubEl, renderAs: Element, ...attributes } = props
 
   let u // used for unit in lorem ipsum
+  let split // for custom inner elements
 
   switch (unit) {
     case 'p':
     case 'paragraph':
       u = 'paragraphs'
+      split = '\n'
       break
     case 's':
     case 'sentence':
       u = 'sentences'
+      split = '\n'
       break
     case 'w':
     case 'word':
       u = 'words'
+      split = ' '
       break
     default:
       u = 'sentences'
@@ -48,15 +65,20 @@ export const LoremText = ({ children, ...props }) => {
   let text = loremIpsum({
     count,
     random: Math.random,
-    unit: u
+    units: u
   })
 
   text = text.slice(0, len || text.length)
 
   return (
-    <React.Fragment>
-      { text }
-    </React.Fragment>
+    <Element className={className} {...attributes}>
+      {
+        SubEl
+          ? text.split(split)
+            .map((str, i) => <SubEl className={subClass} key={i}>{str}</SubEl>)
+          : text
+      }
+    </Element>
   )
 }
 

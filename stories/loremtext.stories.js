@@ -5,12 +5,20 @@ import { LoremText } from '../src'
 
 storiesOf('LoremText', module)
   .add('Default', () => (
-    <div>
+    <p>
       <LoremText />
-    </div>
+    </p>
   ))
   .add('Max Length', () => (
-    <div>
+    <p>
       <LoremText len={10} />
+    </p>
+  ))
+  .add('Paragraphs', () => (
+    <div>
+      <LoremText unit='p' subEl='p' count={3} />
     </div>
+  ))
+  .add('Words', () => (
+    <LoremText renderAs='ul' unit='w' subEl='li' count={10} />
   ))
