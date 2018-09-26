@@ -1,5 +1,4 @@
-import { Example } from './Example'
 
-export {
-  Example
-}
+export Example from './Example'
+
+export LoremText from './LoremText'
