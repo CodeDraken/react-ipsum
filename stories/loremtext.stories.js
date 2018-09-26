@@ -9,8 +9,8 @@ storiesOf('LoremText', module)
       <LoremText />
     </div>
   ))
-  .add('Custom Length', () => (
+  .add('Max Length', () => (
     <div>
-      <LoremText len={800} />
+      <LoremText len={10} />
     </div>
   ))
