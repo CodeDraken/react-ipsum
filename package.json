@@ -1,0 +1,38 @@
+{
+  "name": "react-ipsum",
+  "version": "0.1.0",
+  "description": "React lorem ipsum components",
+  "main": "dist",
+  "standard": {
+    "ignore": [
+      "node_modules/**"
+    ],
+    "parser": "babel-eslint",
+    "envs": [
+      "jest",
+      "node"
+    ]
+  },
+  "scripts": {
+    "prebuild": "babel -d lib src",
+    "build": "npm run prebuild && parcel build lib/index.js",
+    "test": "jest",
+    "lint": "standard 'src/**/*.js!(*.snap)'",
+    "lint-fix": "standard 'src/**/*.js!(*.snap)' --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodeDraken/react-ipsum.git"
+  },
+  "keywords": [
+    "react",
+    "lorem-ipsum",
+    "components"
+  ],
+  "author": "CodeDraken",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodeDraken/react-ipsum/issues"
+  },
+  "homepage": "https://github.com/CodeDraken/react-ipsum#readme"
+}
