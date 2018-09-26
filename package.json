@@ -34,5 +34,29 @@
   "bugs": {
     "url": "https://github.com/CodeDraken/react-ipsum/issues"
   },
-  "homepage": "https://github.com/CodeDraken/react-ipsum#readme"
+  "homepage": "https://github.com/CodeDraken/react-ipsum#readme",
+  "peerDependencies": {
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "prop-types": "^15.6.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^10.0.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "enzyme": "^3.6.0",
+    "enzyme-adapter-react-16": "^1.5.0",
+    "jest": "^23.6.0",
+    "parcel-bundler": "^1.10.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-test-renderer": "^16.5.2",
+    "standard": "^12.0.1"
+  }
 }
