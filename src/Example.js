@@ -13,7 +13,7 @@ export const Example = ({ children, ...props }) => {
   const { ...attributes } = props
 
   return (
-    <div>
+    <div {...attributes}>
       Example
     </div>
   )
