@@ -33,39 +33,36 @@ const defaultProps = {
   len: null,
   count: 2,
   unit: 'sentences',
-  renderAs: React.Fragment
+  renderAs: 'span'
 }
 
 export const LoremText = ({ children, ...props }) => {
   const { len, count, unit, className, subClass, subEl: SubEl, renderAs: Element, ...attributes } = props
 
   let u // used for unit in lorem ipsum
-  let split // for custom inner elements
+  let split = /\n+/g // for custom inner elements
 
   switch (unit) {
     case 'p':
     case 'paragraph':
       u = 'paragraphs'
-      split = '\n'
       break
     case 's':
     case 'sentence':
       u = 'sentences'
-      split = '\n'
       break
     case 'w':
     case 'word':
       u = 'words'
-      split = ' '
+      split = /\s+/g
       break
-    default:
-      u = 'sentences'
   }
 
   let text = loremIpsum({
     count,
     random: Math.random,
-    units: u
+    units: u,
+    suffix: '\n'
   })
 
   text = text.slice(0, len || text.length)
@@ -75,7 +72,7 @@ export const LoremText = ({ children, ...props }) => {
       {
         SubEl
           ? text.split(split)
-            .map((str, i) => <SubEl className={subClass} key={i}>{str}</SubEl>)
+            .map((str, i) => <SubEl className={subClass} key={String(str[0]) + i}>{str}</SubEl>)
           : text
       }
     </Element>

@@ -14,11 +14,45 @@ storiesOf('LoremText', module)
       <LoremText len={10} />
     </p>
   ))
-  .add('Paragraphs', () => (
-    <div>
-      <LoremText unit='p' subEl='p' count={3} />
-    </div>
-  ))
+  .add('Paragraphs', () => {
+    const myComponent = ({ children }) => (
+      <div>
+        <strong>Paragraph block</strong>
+        <br />
+
+        { children }
+
+        <br />
+      </div>
+    )
+
+    return (
+      <div>
+        <h3>Default Paragraph</h3>
+        <LoremText unit='p' />
+
+        <hr />
+
+        <h3>Custom Component</h3>
+        <LoremText unit='p' subEl={myComponent} count={3} />
+      </div>
+    )
+  })
   .add('Words', () => (
-    <LoremText renderAs='ul' unit='w' subEl='li' count={10} />
+    <div>
+      <h3>Default Words</h3>
+      <LoremText unit='w' />
+
+      <hr />
+
+      <h3>Custom elements and classes</h3>
+      <LoremText
+        renderAs='ul'
+        className='list-group'
+        unit='w'
+        subEl='li'
+        subClass='list-group-item'
+        count={5}
+      />
+    </div>
   ))
