@@ -39,10 +39,10 @@ const defaultProps = {
 export const LoremText = ({ children, ...props }) => {
   const { len, count, unit, className, subClass, subEl: SubEl, renderAs: Element, ...attributes } = props
 
-  let u // used for unit in lorem ipsum
+  let u = unit // used for unit in lorem ipsum
   let split = /\n+/g // for custom inner elements
 
-  switch (unit) {
+  switch (u) {
     case 'p':
     case 'paragraph':
       u = 'paragraphs'
