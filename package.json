@@ -1,8 +1,9 @@
 {
   "name": "react-ipsum",
-  "version": "0.2.0",
+  "version": "0.4.0",
   "description": "React lorem ipsum components",
   "main": "dist",
+  "files": ["dist"],
   "standard": {
     "ignore": [
       "node_modules/**"
@@ -18,7 +19,6 @@
     "build": "parcel build lib/index.js",
     "storybook": "start-storybook -p 6006 -c .storybook",
     "storybook-deploy": "storybook-to-ghpages",
-    "publish": "",
     "test": "jest",
     "lint": "standard 'src/**/*.js!(*.snap)'",
     "lint-fix": "standard 'src/**/*.js!(*.snap)' --fix"
