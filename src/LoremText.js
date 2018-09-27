@@ -50,6 +50,7 @@ export const LoremText = ({ children, ...props }) => {
     case 's':
     case 'sentence':
       u = 'sentences'
+      split = '. '
       break
     case 'w':
     case 'word':

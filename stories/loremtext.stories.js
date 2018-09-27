@@ -56,3 +56,18 @@ storiesOf('LoremText', module)
       />
     </div>
   ))
+  .add('Sentences', () => (
+    <div>
+      <h3>Default Sentences</h3>
+      <LoremText unit='s' />
+
+      <hr />
+
+      <h3>Custom elements</h3>
+      <LoremText
+        unit='s'
+        subEl='p'
+        count={5}
+      />
+    </div>
+  ))
