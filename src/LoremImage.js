@@ -9,6 +9,8 @@ const propTypes = {
   alt: PropTypes.string,
   width: PropTypes.number,
   height: PropTypes.number,
+  gray: PropTypes.bool,
+  blur: PropTypes.bool,
   renderAs: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.string,
@@ -37,15 +39,25 @@ export const LoremImage = ({ children, ...props }) => {
     alt,
     width,
     height,
+    gray,
+    blur,
     renderAs: Element,
     subEl: SubEl,
     ...attributes
   } = props
 
+  // prevent browser from caching image url
+  const rand = Math.random() * 10000 >> 0
+
+  // grayscale and blur
+  const grayPath = gray ? '/g' : ''
+  const blurPath = blur ? '&blur' : ''
+
   let { url } = props
 
+  // https://picsum.photos/200/200/?random&blur&sig=3791
   if (!url) {
-    url = `https://picsum.photos/${width}/${height}/?random`
+    url = `https://picsum.photos${grayPath}/${width}/${height}/?random${blurPath}&sig=${rand}`
   }
 
   return (
