@@ -27,3 +27,18 @@ storiesOf('LoremImage', module)
       <LoremImage gray blur />
     </div>
   ))
+  .add('Custom width/height', () => (
+    <div>
+      <h3>Custom width/height</h3>
+      <p>Default is 200x200 px</p>
+
+      <strong>200 x 200</strong>
+      <LoremImage />
+
+      <strong>350 x 200</strong>
+      <LoremImage width={350} />
+
+      <strong>75 x 75</strong>
+      <LoremImage width={75} height={75} />
+    </div>
+  ))

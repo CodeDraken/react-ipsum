@@ -62,7 +62,7 @@ export const LoremImage = ({ children, ...props }) => {
 
   return (
     <Element className={className} {...attributes}>
-      <SubEl src={url} alt={alt} />
+      <SubEl className={subClass} src={url} alt={alt} />
     </Element>
   )
 }
