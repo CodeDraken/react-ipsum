@@ -1,6 +1,6 @@
 {
   "name": "react-ipsum",
-  "version": "0.4.0",
+  "version": "0.6.0",
   "description": "React lorem ipsum components",
   "main": "dist",
   "files": ["dist"],
