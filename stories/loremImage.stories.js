@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 
-import { LoremImage } from '../src'
+import { LoremImage, LoremText } from '../src'
 
 storiesOf('LoremImage', module)
   .add('Default', () => (
@@ -42,3 +42,52 @@ storiesOf('LoremImage', module)
       <LoremImage width={75} height={75} />
     </div>
   ))
+  .add('Custom Elements/Components', () => {
+    const CustomComponent = ({ children }) => (
+      <div className='card col-6'>
+        { children }
+        <div className='card-body'>
+          <h6 className='card-title'>
+            <LoremText unit='w' />
+          </h6>
+          <p className='card-text'>
+            <LoremText />
+          </p>
+          <a href='#' className='btn btn-primary'>Share</a>
+        </div>
+      </div>
+    )
+
+    return (
+      <div className='container'>
+        <h3>Custom Elements/Components</h3>
+        <p>Default is div > image tag</p>
+        <div className='row'>
+          <LoremImage
+            renderAs={CustomComponent}
+            subClass='img-fluid'
+            width={500}
+            height={350}
+          />
+          <LoremImage
+            renderAs={CustomComponent}
+            subClass='img-fluid'
+            width={500}
+            height={500}
+          />
+          <LoremImage
+            renderAs={CustomComponent}
+            subClass='img-fluid'
+            width={350}
+            height={450}
+          />
+          <LoremImage
+            renderAs={CustomComponent}
+            subClass='img-fluid'
+            width={350}
+            height={350}
+          />
+        </div>
+      </div>
+    )
+  })
