@@ -20,6 +20,7 @@ https://www.npmjs.com/package/react-ipsum
 
 1. Fork the repo and download / clone your fork.
 2. Run `npm install`
+3. Make your changes follwing the [Standard JS style](https://standardjs.com/) ( run `npm run lint` and `npm run lint-fix` if you don't want to install Standard )
 
 ### Commands
 
