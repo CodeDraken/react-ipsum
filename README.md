@@ -26,7 +26,7 @@ https://www.npmjs.com/package/react-ipsum
 
 ### Commands
 
-`npm run storybook` - starts storybook on `localhost:6006` This is the main way to preview the components. You make a component, add stories for it and play around with it.
+`npm run storybook` - starts storybook on `localhost:6006` This is the main way to preview the components. You make a component, add stories for it, and play around with it.
 
 `npm test` - runs unit tests using Jest
 
